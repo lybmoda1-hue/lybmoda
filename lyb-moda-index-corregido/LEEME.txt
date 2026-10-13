@@ -1,0 +1,1 @@
+Reemplazo para el index.html de GitHub. Este archivo ajusta las rutas de las nueve imágenes para usar los archivos .webp que ya están en la raíz del repositorio. No incluye ni requiere volver a subir las imágenes. En GitHub, reemplaza el archivo index.html de la raíz con el de este ZIP y confirma el cambio.
