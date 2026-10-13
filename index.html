@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tu Empresa | Confección paquete completo</title>
+  <meta name="description" content="Fabricamos tus prendas de principio a fin: diseño, patronaje, muestras, corte, confección, acabados y entrega. Pide tu cotización.">
+  <meta name="theme-color" content="#1E2A44">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🧵%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --indigo: #1E2A44;   /* denim / tinta */
+      --chalk: #F3F5F2;    /* tiza */
+      --chalk-dark: #E3E8E1;
+      --tape: #EFC53A;     /* cinta métrica */
+      --steel: #55617A;    /* texto secundario */
+      --line: #C9D0C7;
+      --radius: 6px;
+      --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+      --font-body: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+    body {
+      margin: 0;
+      background: var(--chalk);
+      color: var(--indigo);
+      font-family: var(--font-body);
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img, svg { max-width: 100%; display: block; }
+    a { color: inherit; }
+    h1, h2, h3 { font-family: var(--font-display); line-height: 1.08; margin: 0; letter-spacing: -0.015em; }
+    p { margin: 0; }
+    :focus-visible { outline: 3px solid var(--indigo); outline-offset: 3px; }
+
+    .wrap { width: min(1120px, 100% - 2.5rem); margin-inline: auto; }
+    section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+
+    /* ---------- Encabezado ---------- */
+    .site-header {
+      position: sticky; top: 0; z-index: 10;
+      background: var(--chalk);
+      border-bottom: 1px solid var(--line);
+    }
+    .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 64px; }
+    .brand { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; text-decoration: none; letter-spacing: -0.01em; }
+    .nav { display: flex; align-items: center; gap: 1.75rem; }
+    .nav a { text-decoration: none; font-weight: 500; font-size: 0.97rem; }
+    .nav a:not(.btn):hover { text-decoration: underline; text-underline-offset: 4px; }
+
+    .btn {
+      display: inline-block;
+      background: var(--tape); color: var(--indigo);
+      font-family: var(--font-body); font-weight: 700; font-size: 1rem;
+      padding: 0.8rem 1.4rem; border: 2px solid var(--indigo); border-radius: var(--radius);
+      text-decoration: none; cursor: pointer;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .btn:hover { transform: translate(-2px, -2px); box-shadow: 3px 3px 0 var(--indigo); }
+    .btn-ghost { background: transparent; }
+    .btn-small { padding: 0.5rem 1rem; font-size: 0.93rem; }
+
+    /* ---------- Hero ---------- */
+    .hero { padding-block: clamp(3rem, 7vw, 5.5rem) clamp(3.5rem, 8vw, 6rem); }
+    .hero .wrap { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+    .hero h1 { font-size: clamp(2.6rem, 6.4vw, 5.2rem); font-weight: 700; max-width: 12ch; }
+    .stitch {
+      height: 3px; width: min(100%, 420px); margin-block: 1.6rem 1.4rem;
+      background: repeating-linear-gradient(90deg, var(--indigo) 0 14px, transparent 14px 24px);
+      clip-path: inset(0 100% 0 0);
+      animation: sew 1.8s .3s cubic-bezier(.6,.05,.3,1) forwards;
+    }
+    @keyframes sew { to { clip-path: inset(0 0 0 0); } }
+    .hero .lead { max-width: 46ch; font-size: 1.2rem; color: var(--steel); }
+    .hero .actions { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 2rem; }
+    .pattern { justify-self: center; width: min(100%, 330px); }
+    .pattern text { font-family: var(--font-body); font-size: 11px; fill: var(--steel); }
+
+    /* ---------- Servicios ---------- */
+    .services .wrap { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+    .section-intro { position: sticky; top: 100px; }
+    .section-intro h2 { font-size: clamp(2rem, 4.2vw, 3.1rem); }
+    .section-intro p { margin-top: 1rem; color: var(--steel); max-width: 38ch; }
+    .service-list { margin: 0; padding: 0; list-style: none; }
+    .service-list li { border-top: 2px solid var(--indigo); padding-block: 1.15rem 1.35rem; }
+    .service-list li:last-child { border-bottom: 2px solid var(--indigo); }
+    .service-list h3 { font-size: 1.35rem; }
+    .service-list p { margin-top: .35rem; color: var(--steel); max-width: 52ch; }
+
+    /* ---------- Proceso (sí es una secuencia) ---------- */
+    .process { background: var(--chalk-dark); }
+    .process h2 { font-size: clamp(2rem, 4.2vw, 3.1rem); max-width: 18ch; }
+    .tape {
+      margin-block: 2.2rem 2.4rem; height: 34px; border-radius: 3px;
+      background-color: var(--tape);
+      background-image:
+        repeating-linear-gradient(90deg, var(--indigo) 0 2px, transparent 2px 50px),
+        repeating-linear-gradient(90deg, var(--indigo) 0 1px, transparent 1px 10px);
+      background-size: 100% 18px, 100% 10px;
+      background-position: 0 100%, 0 100%;
+      background-repeat: no-repeat;
+      border: 2px solid var(--indigo);
+    }
+    .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.2rem 2rem; counter-reset: paso; }
+    .steps li { counter-increment: paso; }
+    .steps li::before {
+      content: "Paso " counter(paso);
+      display: block; font-weight: 700; font-size: .95rem; margin-bottom: .4rem;
+      padding-bottom: .4rem; border-bottom: 2px solid var(--indigo);
+    }
+    .steps h3 { font-size: 1.3rem; }
+    .steps p { margin-top: .3rem; color: var(--steel); }
+
+    /* ---------- Portafolio ---------- */
+    .portfolio h2 { font-size: clamp(2rem, 4.2vw, 3.1rem); }
+    .portfolio .sub { margin-top: .8rem; color: var(--steel); max-width: 52ch; }
+    .gallery { margin-top: 2.2rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .gallery figure { margin: 0; }
+    .gallery .ph, .gallery img {
+      width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius);
+    }
+    .gallery .ph {
+      display: grid; place-items: center; text-align: center; padding: 1rem;
+      border: 2px dashed var(--steel); color: var(--steel); background: var(--chalk-dark); font-size: .95rem;
+    }
+    .gallery figure:nth-child(2) .ph, .gallery figure:nth-child(2) img { aspect-ratio: 1 / 1; }
+    .gallery figure:nth-child(5) .ph, .gallery figure:nth-child(5) img { aspect-ratio: 1 / 1; }
+    .gallery figcaption { margin-top: .5rem; font-size: .95rem; color: var(--steel); }
+
+    /* ---------- Condiciones ---------- */
+    .terms { background: var(--indigo); color: var(--chalk); }
+    .terms :focus-visible { outline-color: var(--tape); }
+    .terms h2 { font-size: clamp(2rem, 4.2vw, 3.1rem); max-width: 16ch; }
+    .terms-list { margin: 2.2rem 0 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 3rem; }
+    .terms-list div { border-top: 1px solid rgba(243,245,242,.35); padding-block: 1.1rem 1.3rem; }
+    .terms-list dt { font-weight: 700; color: var(--tape); }
+    .terms-list dd { margin: .25rem 0 0; font-size: 1.15rem; }
+
+    /* ---------- Contacto ---------- */
+    .contact .wrap { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+    .contact h2 { font-size: clamp(2rem, 4.2vw, 3.1rem); }
+    .contact .direct { margin: 1.8rem 0 0; padding: 0; list-style: none; display: grid; gap: .9rem; }
+    .contact .direct span { display: block; font-size: .92rem; color: var(--steel); }
+    .contact .direct a { font-weight: 700; font-size: 1.1rem; }
+    form { display: grid; gap: 1.2rem; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    label { display: grid; gap: .3rem; font-weight: 700; font-size: .95rem; }
+    input, select, textarea {
+      font: inherit; font-weight: 400; color: var(--indigo);
+      background: #fff; border: 2px solid var(--indigo); border-radius: var(--radius);
+      padding: .7rem .8rem; width: 100%;
+    }
+    textarea { min-height: 120px; resize: vertical; }
+    .form-note { font-size: .92rem; color: var(--steel); }
+
+    /* ---------- Pie ---------- */
+    footer { border-top: 1px solid var(--line); padding-block: 1.8rem; color: var(--steel); font-size: .95rem; }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 900px) {
+      .hero .wrap, .services .wrap, .contact .wrap { grid-template-columns: 1fr; }
+      .pattern { width: min(70%, 260px); justify-self: start; }
+      .section-intro { position: static; }
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .nav a:not(.btn) { display: none; }
+      .steps, .terms-list, .row { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr 1fr; gap: .7rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .stitch { animation: none; clip-path: none; }
+      .btn { transition: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#inicio" data-brand>Tu Empresa</a>
+      <nav class="nav" aria-label="Principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#portafolio">Portafolio</a>
+        <a href="#contacto" class="btn btn-small">Cotizar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <h1>De la idea a la prenda terminada</h1>
+          <div class="stitch" aria-hidden="true"></div>
+          <p class="lead">Hacemos todo el trabajo por ti: diseño, patronaje, muestras, corte, confección, acabados y entrega. Tú aportas la idea, nosotros fabricamos tu colección.</p>
+          <div class="actions">
+            <a class="btn" href="#contacto">Solicitar cotización</a>
+            <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+          </div>
+        </div>
+
+        <!-- Pieza de patrón: delantero de camiseta -->
+        <svg class="pattern" viewBox="0 0 360 440" role="img" aria-label="Pieza de patrón de una prenda con línea de hilo y márgenes de costura">
+          <path d="M80 40 C112 74 168 74 200 40 L304 72 L336 164 L282 184 L282 404 L78 404 L78 184 L24 164 L56 72 Z"
+                fill="#fff" stroke="#1E2A44" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M90 56 C118 88 162 88 190 56 L292 86 L318 158 L270 176 L270 392 L90 392 L90 176 L42 158 L68 86 Z"
+                fill="none" stroke="#55617A" stroke-width="1.5" stroke-dasharray="6 5"/>
+          <line x1="180" y1="150" x2="180" y2="340" stroke="#1E2A44" stroke-width="2"/>
+          <path d="M180 142 L173 160 L187 160 Z M180 348 L173 330 L187 330 Z" fill="#1E2A44"/>
+          <path d="M78 290 l10 -6 v12 z M282 290 l-10 -6 v12 z" fill="#1E2A44"/>
+          <text x="180" y="244" text-anchor="middle" transform="rotate(-90 180 244)" dy="-10">hilo del tejido</text>
+          <text x="180" y="424" text-anchor="middle">DELANTERO · cortar 1 · talla M</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="services" id="servicios">
+      <div class="wrap">
+        <div class="section-intro">
+          <h2>Un solo taller para toda tu producción</h2>
+          <p>No tienes que coordinar a varios proveedores. Nos encargamos de cada etapa para que tu prenda salga igual de bien la primera y la milésima vez.</p>
+        </div>
+        <!-- Ajusta esta lista a los servicios que realmente ofreces -->
+        <ul class="service-list">
+          <li>
+            <h3>Diseño y desarrollo de producto</h3>
+            <p>Convertimos tu boceto o referencia en una prenda fabricable, con ficha técnica completa.</p>
+          </li>
+          <li>
+            <h3>Patronaje y escalado de tallas</h3>
+            <p>Creamos los moldes y los escalamos a todas las tallas de tu colección.</p>
+          </li>
+          <li>
+            <h3>Muestras y prototipos</h3>
+            <p>Producimos una muestra para que apruebes el calce, la tela y los detalles antes de fabricar.</p>
+          </li>
+          <li>
+            <h3>Compra de telas e insumos</h3>
+            <p>Conseguimos telas, hilos, botones, cierres y etiquetas con proveedores confiables.</p>
+          </li>
+          <li>
+            <h3>Corte y confección</h3>
+            <p>Cortamos y cosemos tu pedido con maquinaria industrial y control en cada módulo.</p>
+          </li>
+          <li>
+            <h3>Estampado y bordado</h3>
+            <p>Aplicamos tu logo o diseño con serigrafía, sublimación, bordado o transfer.</p>
+          </li>
+          <li>
+            <h3>Acabados y control de calidad</h3>
+            <p>Planchamos, revisamos cada prenda y descartamos cualquier defecto antes del empaque.</p>
+          </li>
+          <li>
+            <h3>Etiquetado, empaque y entrega</h3>
+            <p>Entregamos tus prendas etiquetadas, dobladas y listas para vender o despachar.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section class="process" id="proceso">
+      <div class="wrap">
+        <h2>Cómo trabajamos, paso a paso</h2>
+        <div class="tape" aria-hidden="true"></div>
+        <ol class="steps">
+          <li>
+            <h3>Cuéntanos tu idea</h3>
+            <p>Nos envías bocetos, fotos de referencia o tu ficha técnica y la cantidad que necesitas.</p>
+          </li>
+          <li>
+            <h3>Cotización</h3>
+            <p>Te enviamos el precio por prenda y los tiempos de entrega.</p>
+          </li>
+          <li>
+            <h3>Muestra</h3>
+            <p>Fabricamos el prototipo, tú lo pruebas y pides los ajustes que haga falta.</p>
+          </li>
+          <li>
+            <h3>Producción</h3>
+            <p>Cortamos, confeccionamos y revisamos tu pedido, con avisos del avance.</p>
+          </li>
+          <li>
+            <h3>Control de calidad</h3>
+            <p>Inspeccionamos, planchamos, etiquetamos y empacamos.</p>
+          </li>
+          <li>
+            <h3>Entrega</h3>
+            <p>Despachamos tu pedido o lo dejas listo para recoger en nuestro taller.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- PORTAFOLIO -->
+    <section class="portfolio" id="portafolio">
+      <div class="wrap">
+        <h2>Prendas que hemos fabricado</h2>
+        <p class="sub">Una muestra de los trabajos que hemos entregado a nuestros clientes.</p>
+        <!--
+          PARA PONER TUS FOTOS: reemplaza cada <div class="ph">…</div> por
+          <img src="fotos/nombre-de-tu-foto.jpg" alt="Descripción de la prenda" loading="lazy">
+          y guarda las imágenes en una carpeta "fotos" junto a este archivo.
+        -->
+        <div class="gallery">
+          <figure><div class="ph">Foto de prenda terminada</div><figcaption>Camisetas · 500 unidades</figcaption></figure>
+          <figure><div class="ph">Foto de prenda terminada</div><figcaption>Uniformes · 300 unidades</figcaption></figure>
+          <figure><div class="ph">Foto de nuestro taller</div><figcaption>Línea de confección</figcaption></figure>
+          <figure><div class="ph">Foto de prenda terminada</div><figcaption>Ropa deportiva</figcaption></figure>
+          <figure><div class="ph">Foto de detalle de costura</div><figcaption>Acabados y detalles</figcaption></figure>
+          <figure><div class="ph">Foto de prenda terminada</div><figcaption>Colección para marca</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONDICIONES -->
+    <section class="terms" id="condiciones">
+      <div class="wrap">
+        <h2>Lo que necesitas saber antes de pedir</h2>
+        <!-- Cambia los XX por tus datos reales -->
+        <dl class="terms-list">
+          <div><dt>Pedido mínimo</dt><dd>XX unidades por referencia</dd></div>
+          <div><dt>Tiempo de muestra</dt><dd>XX días hábiles</dd></div>
+          <div><dt>Tiempo de producción</dt><dd>XX semanas según la cantidad</dd></div>
+          <div><dt>Prendas que fabricamos</dt><dd>Camisetas, camisas, pantalones, ropa deportiva, uniformes y más</dd></div>
+          <div><dt>Forma de pago</dt><dd>XX% de anticipo y el saldo contra entrega</dd></div>
+          <div><dt>Envíos</dt><dd>A todo el país y exportación bajo pedido</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contact" id="contacto">
+      <div class="wrap">
+        <div>
+          <h2>Pide tu cotización</h2>
+          <p style="margin-top:1rem;color:var(--steel);max-width:40ch">Cuéntanos qué quieres fabricar. Respondemos en un día hábil.</p>
+          <ul class="direct">
+            <li><span>WhatsApp</span><a id="link-wa" href="#">Escríbenos</a></li>
+            <li><span>Correo</span><a id="link-mail" href="#">correo@tuempresa.com</a></li>
+            <li><span>Taller</span>Dirección de tu taller, Ciudad</li>
+            <li><span>Horario</span>Lunes a viernes, 8:00 a 17:00</li>
+          </ul>
+        </div>
+
+        <form id="form-cotizacion">
+          <div class="row">
+            <label>Nombre
+              <input name="nombre" type="text" autocomplete="name" required>
+            </label>
+            <label>Marca o empresa
+              <input name="empresa" type="text" autocomplete="organization">
+            </label>
+          </div>
+          <div class="row">
+            <label>Tipo de prenda
+              <select name="prenda" required>
+                <option value="">Elige una opción</option>
+                <option>Camisetas y polos</option>
+                <option>Camisas y blusas</option>
+                <option>Pantalones y jeans</option>
+                <option>Vestidos y faldas</option>
+                <option>Ropa deportiva</option>
+                <option>Uniformes y dotación</option>
+                <option>Chaquetas y abrigos</option>
+                <option>Otra</option>
+              </select>
+            </label>
+            <label>Cantidad aproximada
+              <select name="cantidad" required>
+                <option value="">Elige una opción</option>
+                <option>Menos de 100</option>
+                <option>100 a 500</option>
+                <option>500 a 2.000</option>
+                <option>Más de 2.000</option>
+                <option>Aún no lo sé</option>
+              </select>
+            </label>
+          </div>
+          <label>Cuéntanos tu proyecto
+            <textarea name="mensaje" placeholder="Telas, colores, tallas, fecha en que lo necesitas…" required></textarea>
+          </label>
+          <button class="btn" type="submit">Enviar por WhatsApp</button>
+          <p class="form-note">Al enviar se abrirá WhatsApp con tu solicitud ya escrita. Puedes adjuntar bocetos o fotos de referencia allí mismo.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="year"></span> <span data-brand>Tu Empresa</span>. Todos los derechos reservados.</span>
+      <span>Confección paquete completo</span>
+    </div>
+  </footer>
+
+  <script>
+    /* ====== EDITA SOLO ESTA PARTE ====== */
+    const CONFIG = {
+      nombreEmpresa: "Tu Empresa",
+      whatsapp: "0000000000",            // código de país + número, sin + ni espacios
+      correo: "correo@tuempresa.com"
+    };
+    /* =================================== */
+
+    document.querySelectorAll("[data-brand]").forEach(el => el.textContent = CONFIG.nombreEmpresa);
+    document.title = CONFIG.nombreEmpresa + " | Confección paquete completo";
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const wa = "https://wa.me/" + CONFIG.whatsapp;
+    document.getElementById("link-wa").href = wa;
+    const mail = document.getElementById("link-mail");
+    mail.href = "mailto:" + CONFIG.correo;
+    mail.textContent = CONFIG.correo;
+
+    document.getElementById("form-cotizacion").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const d = new FormData(this);
+      const texto =
+        "Hola, quiero cotizar una producción.\n" +
+        "Nombre: " + d.get("nombre") + "\n" +
+        "Marca o empresa: " + (d.get("empresa") || "—") + "\n" +
+        "Prenda: " + d.get("prenda") + "\n" +
+        "Cantidad: " + d.get("cantidad") + "\n" +
+        "Proyecto: " + d.get("mensaje");
+      window.open(wa + "?text=" + encodeURIComponent(texto), "_blank", "noopener");
+    });
+  </script>
+</body>
+</html>
