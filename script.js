@@ -1,19 +1,14 @@
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('.site-nav');
-
 menuButton.addEventListener('click', () => {
-  const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
-  menuButton.setAttribute('aria-expanded', String(!isOpen));
-  menuButton.setAttribute('aria-label', isOpen ? 'Abrir menú' : 'Cerrar menú');
-  navigation.classList.toggle('open', !isOpen);
+  const open = menuButton.getAttribute('aria-expanded') === 'true';
+  menuButton.setAttribute('aria-expanded', String(!open));
+  menuButton.setAttribute('aria-label', open ? 'Abrir menú' : 'Cerrar menú');
+  navigation.classList.toggle('open', !open);
 });
-
-navigation.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => {
-    menuButton.setAttribute('aria-expanded', 'false');
-    menuButton.setAttribute('aria-label', 'Abrir menú');
-    navigation.classList.remove('open');
-  });
-});
-
+navigation.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+  menuButton.setAttribute('aria-expanded', 'false');
+  menuButton.setAttribute('aria-label', 'Abrir menú');
+  navigation.classList.remove('open');
+}));
 document.querySelector('#year').textContent = new Date().getFullYear();

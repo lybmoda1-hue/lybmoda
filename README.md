@@ -1,24 +1,18 @@
 # LyB Moda
 
-Sitio web estático, adaptable a móviles, para LyB Moda. No requiere instalar dependencias ni compilar: Vercel puede publicar directamente esta carpeta.
+Sitio web estático y adaptable a móviles. Incluye galería de prendas y fichas de proceso. No requiere instalar dependencias.
 
-## Publicar en GitHub y Vercel
+## Actualizar el sitio en GitHub y Vercel
 
-1. Crea un repositorio nuevo en GitHub llamado `lyb-moda`.
-2. Sube `index.html`, `styles.css`, `script.js` y este `README.md` a la raíz del repositorio.
-3. Entra en [vercel.com](https://vercel.com), inicia sesión y selecciona **Add New → Project**.
-4. Importa el repositorio `lyb-moda`. Deja el framework como **Other** y los campos de comandos de compilación vacíos.
-5. Pulsa **Deploy**. Vercel publicará el sitio y te dará una dirección web.
+1. Descarga el archivo `lyb-moda-galeria.zip` que acompaña a esta carpeta y descomprímelo.
+2. Abre en GitHub el mismo repositorio conectado a tu proyecto de Vercel.
+3. Selecciona **Add file → Upload files** y arrastra los archivos descomprimidos, incluida la carpeta `images` con sus ocho imágenes.
+4. Pulsa **Commit changes**. Vercel publicará los cambios automáticamente.
+5. Cuando termine el despliegue, recarga tu dominio con **Ctrl + F5**.
 
-## Actualizar el sitio
+`index.html`, `styles.css` y `script.js` deben quedar en la misma carpeta; la subcarpeta `images` debe quedar junto a ellos. Si Vercel publica una subcarpeta específica, sube allí el contenido.
 
-Edita los archivos en GitHub y guarda los cambios. Vercel volverá a publicar el sitio automáticamente.
-
-## Dominio propio
-
-Cuando tengas el dominio, agrégalo en **Settings → Domains** del proyecto en Vercel. Después, configura en el proveedor del dominio los registros DNS que Vercel indique. El dominio puede estar registrado en Namecheap aunque el sitio siga alojado en Vercel.
-
-## Contacto configurado
+## Contacto
 
 - WhatsApp: `+57 301 109 2692`
 - Correo: `lybmoda1@gmail.com`
