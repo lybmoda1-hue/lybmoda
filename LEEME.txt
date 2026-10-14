@@ -1,0 +1,21 @@
+LYB MODA - PAGINA DE PROCESO Y PRENDAS TERMINADAS
+
+El paquete incluye:
+- diseno-proceso.html: página independiente y adaptable a celulares.
+- proceso-01.mp4 a proceso-05.mp4: videos del recorrido de producción hasta la entrega.
+- prenda-terminada-01.jpg a prenda-terminada-09.jpg: galería de prendas terminadas.
+
+PARA PUBLICAR EN GITHUB Y VERCEL
+1. Descarga y descomprime este ZIP.
+2. Abre el repositorio de GitHub de LyB Moda y entra a la carpeta principal, donde está index.html.
+3. Selecciona Add file > Upload files.
+4. Arrastra diseno-proceso.html, los cinco videos y las nueve fotos a esa carpeta principal. No cambies los nombres.
+5. Pulsa Commit changes. Vercel publicará los archivos automáticamente.
+
+La nueva página quedará en:
+https://lybmoda.com/diseno-proceso.html
+
+Para poner un enlace en el menú de la página principal, agrega dentro de la navegación de index.html:
+<a href="diseno-proceso.html">Diseño y proceso</a>
+
+Las imágenes están separadas de los videos: primero aparece el recorrido de producción y luego la galería de prendas terminadas.
